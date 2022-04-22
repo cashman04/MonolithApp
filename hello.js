@@ -19,11 +19,13 @@ const server = http.createServer(function(req, res){
     child.send({num:req.headers.fibo,event:rand});  //send the number to fibonacci_running
     event.once(rand, (value) => { //when the event is called
         res.end(`${value}`)
+		console.log("Request receieve at /fibo");
     })
 
   } else {
      let rand = Math.random() * 100;
-      res.end('Your number is ' + rand);
+     res.end('Your number is ' + rand);
+	 console.log("Request receieve at /");
   }
 });
 
