@@ -1,6 +1,6 @@
 const http = require("http");
 const host = '0.0.0.0';
-const port = 8000;
+const port = 80;
 const {fork} = require('child_process');
 const child = fork(`${__dirname}/generate_primes.js`);
 let {EventEmitter} = require('events');
@@ -23,7 +23,7 @@ const server = http.createServer(function(req, res){
     })
 
   } else if (req.url == '/health') {
-    res.end("Healhty"); 
+    res.end("Healthy"); 
 	console.log("Request receieve at /health");
   
   
