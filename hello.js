@@ -22,6 +22,10 @@ const server = http.createServer(function(req, res){
 		console.log("Request receieve at /fibo");
     })
 
+  } else if (req.url == '/health') {
+    res.end("Healhty"); 
+  
+  
   } else {
      let rand = Math.random() * 100;
      res.end('Your number is ' + rand);
