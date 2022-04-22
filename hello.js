@@ -24,6 +24,7 @@ const server = http.createServer(function(req, res){
 
   } else if (req.url == '/health') {
     res.end("Healhty"); 
+	console.log("Request receieve at /health");
   
   
   } else {
