@@ -15,6 +15,7 @@ const route2 = "b"
 const server = http.createServer(function(req, res){
 
   if (req.url == '/fibo') {
+	console.log("Request receieve at /fibo")
     let rand = Math.random() * 100;
     child.send({num:req.headers.fibo,event:rand});  //send the number to fibonacci_running
     event.once(rand, (value) => { //when the event is called
