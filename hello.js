@@ -1,5 +1,5 @@
 const http = require("http");
-const host = 'localhost';
+const host = '0.0.0.0';
 const port = 8000;
 const {fork} = require('child_process');
 const child = fork(`${__dirname}/generate_primes.js`);
