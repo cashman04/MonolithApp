@@ -13,8 +13,8 @@ http
     const url = new URL(req.url, `http://${req.headers.host}`);
     console.log('Incoming request to:', url.pathname);
     if (url.pathname === '/fibo1') {
-      // fast fibo
-      const n = randomInteger(1,20)
+      // any fibo
+      const n = randomInteger(1,50)
       console.log('Calculating fibonacci for', n);
       const result = await fibonacciWorker(n);
       res.writeHead(200);
