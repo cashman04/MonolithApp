@@ -35,7 +35,14 @@ http
       return res.end(`Result: ${result}\n`);
     } else if (req.url == '/fibo4') {
       //slowest
-      const n = randomInteger(41,50)
+      const n = randomInteger(41,45)
+      console.log('Calculating fibonacci for', n);
+      const result = await fibonacciWorker(n);
+      res.writeHead(200);
+      return res.end(`Result: ${result}\n`);
+    } else if (req.url == '/fibo5') {
+      //slowest
+      const n = randomInteger(45,47)
       console.log('Calculating fibonacci for', n);
       const result = await fibonacciWorker(n);
       res.writeHead(200);
